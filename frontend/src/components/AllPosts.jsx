@@ -67,7 +67,7 @@ export const AllPosts = () => {
 
       {/* Latest Posts Section */}
       <div className="w-full overflow-y-auto">
-        <h1 className="text-2xl font-bold text-white mb-4">Latest Posts</h1>
+        <h1 className="text-3xl font-bold text-white mb-4">Latest Posts</h1>
 
         {loading ? (
           <div className="flex justify-center items-center py-8">

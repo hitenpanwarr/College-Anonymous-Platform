@@ -2,12 +2,10 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="w-full text-gray-200">
-      <div className="max-w-[1000px] mx-auto flex flex-col gap-10 min-h-screen pt-24 w-full">
-        <h1 className="text-2xl font-medium text-center">
-          About{" "}
-        </h1>
-        <p className="text-base md:text-lg max-w=[800px] w-full px-2 mx-auto text-center text-gray-300">
+    <div className="w-full min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200">
+      <div className="max-w-[1000px] mx-auto flex flex-col gap-8 w-full px-4">
+        <h1 className="text-3xl font-bold text-center">About</h1>
+        <p className="text-base md:text-lg max-w-[800px] w-full mx-auto text-center text-gray-300">
           Welcome to Anonymous! I’m Kapil, the creator of this website.
           Anonymous allows you to post anonymously. This website is exclusively
           for GLA University students, and access is granted using your college
@@ -17,4 +15,4 @@ export default function About() {
       </div>
     </div>
   );
-} 
+}

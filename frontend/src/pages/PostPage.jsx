@@ -72,7 +72,7 @@ export default function PostPage() {
   };
 
   return (
-    <div className="w-full min-h-screen pt-[5rem] pb-2 flex justify-center text-gray-200">
+    <div className="w-full min-h-screen pt-[5rem] pb-10 flex justify-center text-gray-200 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {signinModal && <SigninModal onClose={closeModal} />}
       {loading ? (
         <div className="flex justify-center items-center">

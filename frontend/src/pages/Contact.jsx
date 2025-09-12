@@ -39,9 +39,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="w-full text-gray-200">
-      <div className="max-w-[500px] mx-auto px-2 flex flex-col gap-5 min-h-screen pt-24 w-full">
-        <h1 className="text-2xl font-medium text-center">
+    <div className="w-full min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200">
+      <div className="max-w-[500px] mx-auto px-4 flex flex-col gap-6 w-full">
+        <h1 className="text-3xl font-bold text-center">
           Contact me{" "}
         </h1>
         <form onSubmit={submitHandler} className="flex flex-col gap-4">
