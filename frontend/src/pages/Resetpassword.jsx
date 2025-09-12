@@ -60,18 +60,18 @@ const Resetpassword = () => {
     }
   };
   return (
-    <div className="w-full min-h-screen flex justify-center items-center   ">
-      <div className="flex mx-2 flex-col gap-8  dark:bg-gray-700 bg-indigo-300 bg-opacity-30   dark:bg-opacity-30 rounded-md  max-w-[400px] py-10 px-8 w-full">
+    <div className="w-full min-h-screen flex justify-center items-center text-gray-200">
+      <div className="flex mx-2 flex-col gap-8 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-md max-w-[400px] py-10 px-8 w-full">
         <span className="text-2xl font-semibold  bg-indigo-800  dark:text-gray-300 size-10 flex justify-center items-center  self-center text-gray-200 rounded-full px-[0.5rem]">
           Λ
         </span>
         {success && (
-          <p className="dark:text-gray-200 text-textColor text-center text-xl">
+          <p className="text-gray-200 text-center text-xl">
             Password reset successfully
           </p>
         )}
         <h1
-          className={` text-2xl text-center dark:text-gray-200 text-textColor font-semibold ${
+          className={` text-2xl text-center text-gray-200 font-semibold ${
             success && "hidden"
           }`}
         >
@@ -80,7 +80,7 @@ const Resetpassword = () => {
         </h1>
         <form
           onSubmit={submitHandler}
-          className={`flex flex-col gap-4 dark:text-gray-200 text-textColor ${
+          className={`flex flex-col gap-4 text-gray-200 ${
             success && "hidden"
           }`}
         >
@@ -88,7 +88,7 @@ const Resetpassword = () => {
             <input
               required
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded-md text-sm w-full p-3 bg-transparent border-2 border-gray-600 focus:outline-none focus:border-indigo-700 dark:placeholder:text-gray-200 placeholder:text-textColor placeholder:text-sm placeholder: text-start border-opacity-60"
+              className="rounded-md text-sm w-full p-3 bg-transparent border-2 border-gray-700 focus:outline-none focus:border-indigo-600 placeholder:text-gray-400"
               type={`${showPassword ? "text" : "password"}`}
               placeholder="Enter new password"
             />
@@ -108,7 +108,7 @@ const Resetpassword = () => {
             <input
               required
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="rounded-md text-sm w-full p-3 bg-transparent border-2 border-gray-600 focus:outline-none focus:border-indigo-700 dark:placeholder:text-gray-200 placeholder:text-textColor placeholder:text-sm placeholder: text-start border-opacity-60"
+              className="rounded-md text-sm w-full p-3 bg-transparent border-2 border-gray-700 focus:outline-none focus:border-indigo-600 placeholder:text-gray-400"
               type={`${showPasswordConfirm ? "text" : "password"}`}
               placeholder="Confirm password"
             />
@@ -126,12 +126,12 @@ const Resetpassword = () => {
           </div>
 
           {error && (
-            <p className="text-red-500 text-sm tracking-normal">{error}</p>
+            <p className="text-red-400 text-sm tracking-normal">{error}</p>
           )}
           <button
             className={`text-sm ${loading && "pointer-events-none"} ${
               success && "hidden"
-            } hover:scale-95 transition-all flex justify-center items-center font-medium bg-indigo-700 py-2 rounded-md text-gray-200  `}
+            } transition-all flex justify-center items-center font-medium bg-gradient-to-r from-indigo-600 to-purple-600 py-2 rounded-md text-white`}
           >
             {loading ? (
               <ThreeDots

@@ -68,32 +68,24 @@ export default function VerifyOTP() {
   };
 
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center   bg  px-2  ">
+    <div className="w-screen min-h-screen flex flex-col items-center px-2 text-gray-200">
       <div
-        className={`sm:max-w-[400px] rounded-md flex flex-col gap-5 py-6 px-2 mt-[12rem] sm:px-6 w-full shadow-md shadow-indigo-600  bg-indigo-900`}
+        className={`sm:max-w-[400px] rounded-md flex flex-col gap-5 py-6 px-4 mt-[12rem] w-full bg-gray-800/60 backdrop-blur-sm border border-gray-700 shadow-xl`}
       >
-        <h1 className=" text-white text-2xl sm:text-2xl font-semibold">
-          Verify OTP
-        </h1>
-        <form onSubmit={submitHandler} className="flex flex-col  gap-4  ">
+        <h1 className="text-2xl font-semibold">Verify OTP</h1>
+        <form onSubmit={submitHandler} className="flex flex-col gap-4">
           <input
             onChange={changeHandler}
             type="text"
-            className="rounded-md bg-black bg-opacity-10 py-2 px-2 text-white  focus:outline-none border-[2px] focus:border-green-600 border-indigo-600"
+            className="rounded-md py-3 px-3 bg-gray-900/50 border border-gray-700 text-gray-200 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             placeholder="Enter OTP"
           />
-          <span className="text-white  text-sm">OTP will  expire in {timeLeft} seconds</span>
+          <span className="text-gray-400 text-sm">OTP will expire in {timeLeft} seconds</span>
 
-          {error && <span className=" text-red-600 text-sm">*{error}</span>}
-          <button className=" bg-indigo-600 rounded-md  text-gray-200 py-2 hover:scale-95 transition-all hover:bg-indigo-700 flex justify-center    font-medium">
+          {error && <span className="text-red-400 text-sm">*{error}</span>}
+          <button className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-md text-white py-3 hover:from-indigo-700 hover:to-purple-700 transition-colors font-medium">
             {loading ? (
-              <ThreeDots
-                height="40"
-                width="60"
-                wrapperClass
-                color="white"
-                ariaLabel="loading"
-              />
+              <ThreeDots height="30" width="60" color="white" ariaLabel="loading" />
             ) : (
               "Verify OTP"
             )}

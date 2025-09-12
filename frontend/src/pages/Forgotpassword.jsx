@@ -38,18 +38,18 @@ export const Forgotpassword = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center dark:text-gray-200 text-textColor ">
+    <div className="w-full min-h-screen flex justify-center items-center text-gray-200">
       <div
-        className={`flex flex-col gap-4 mx-2   dark:bg-gray-700 bg-indigo-300 bg-opacity-30   dark:bg-opacity-30 rounded-md  max-w-[400px] sm:py-8 py-6 px-3 sm:px-8 w-full  `}
+        className={`flex flex-col gap-4 mx-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-md max-w-[400px] sm:py-8 py-6 px-3 sm:px-8 w-full`}
       >
         <span className="text-2xl font-semibold mb-6 bg-indigo-800  dark:text-gray-300 size-10 flex justify-center items-center  self-center text-gray-200 rounded-full px-[0.5rem]">
           Λ
         </span>
-        <h1 className="text-center   font-semibold">
+        <h1 className="text-center font-semibold">
           {success ? "Email Sent" : "Forgot your Password?"}
         </h1>
         {success ? (
-          <p className="text-sm">
+          <p className="text-sm text-gray-300">
             An email has been sent to your email address with instructions on
             how to reset your password.
           </p>
@@ -58,16 +58,16 @@ export const Forgotpassword = () => {
             <input
               required
               onChange={(e) => setEmail(e.target.value)}
-              className="rounded-md text-sm p-3 bg-transparent border-2 border-gray-600 focus:outline-none focus:border-indigo-700 dark:placeholder:text-gray-200 placeholder:text-textColor placeholder:text-sm placeholder: text-start border-opacity-60"
+              className="rounded-md text-sm p-3 bg-transparent border-2 border-gray-700 focus:outline-none focus:border-indigo-600 placeholder:text-gray-400"
               type="email"
               placeholder="Enter Your account email"
             />
-            {error && <p className="text-red-600 text-xs">{error}</p>}
+            {error && <p className="text-red-400 text-xs">{error}</p>}
 
             <button
               className={`text-sm ${
                 loading && "pointer-events-none"
-              } hover:scale-95 transition-all font-medium bg-indigo-700 py-2 rounded-md text-gray-200 flex justify-center items-center  `}
+              } transition-all font-medium bg-gradient-to-r from-indigo-600 to-purple-600 py-2 rounded-md text-white flex justify-center items-center`}
             >
               {loading ? (
                 <ThreeDots
@@ -85,9 +85,9 @@ export const Forgotpassword = () => {
         )}
         <NavLink to="/sign-in">
           <button
-            className={`text-sm hover:scale-95 w-full  transition-all ${
+            className={`text-sm w-full transition-all ${
               success ? "block" : "hidden"
-            } font-medium bg-indigo-700 py-2  rounded-md text-gray-200 `}
+            } font-medium bg-gradient-to-r from-indigo-600 to-purple-600 py-2 rounded-md text-white`}
           >
             Sign in
           </button>
@@ -101,7 +101,7 @@ export const Forgotpassword = () => {
           Remember Your password?{" "}
           <NavLink to="/sign-in">
             {" "}
-            <span className="font-semibold underline ">Sign in</span>{" "}
+            <span className="font-semibold underline text-indigo-400">Sign in</span>{" "}
           </NavLink>
         </span>
       </div>

@@ -40,8 +40,8 @@ export default function UserPost() {
     setAllPosts(updatedPosts);
   };
   return (
-    <div className="w-full flex justify-center min-h-screen">
-      <div className="w-full max-w-[900px] flex   pt-20 pb-24 ">
+    <div className="w-full flex justify-center min-h-screen text-gray-200">
+      <div className="w-full max-w-[900px] flex pt-20 pb-24 ">
         {loading ? (
           <div className="flex w-full justify-center items-center ">
             <span class="loader "></span>
@@ -49,11 +49,11 @@ export default function UserPost() {
         ) : (
           <div className="flex flex-col w-full gap-3">
             {allPosts.length === 0 ? (
-              <p className="dark:text-gray-300 text-textColor text-center font-semibold ">
+              <p className="text-gray-300 text-center font-semibold ">
                 No post created Yet
               </p>
             ) : (
-              <h1 className="md:text-2xl text-xl dark:text-gray-300 text-textColor font-medium text-center">
+              <h1 className="md:text-2xl text-xl text-white font-medium text-center">
                 All posts
               </h1>
             )}

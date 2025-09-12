@@ -34,13 +34,13 @@ export const PopularPosts = () => {
   }, []);
 
   return (
-    <div className="w-full md:w-[40%] flex flex-col gap-6 p-2">
+    <div className="w-full md:w-[40%] flex flex-col gap-6 p-2 text-gray-200">
       {/* Popular Posts Section */}
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4">
+      <div className="bg-gray-800/60 backdrop-blur-sm rounded-lg shadow-lg border border-gray-700 p-4">
         {/* Header */}
         <div className="flex items-center gap-2 mb-4">
-          <FaFire className="text-orange-500 text-xl" />
-          <h1 className="text-xl font-bold text-gray-900">Popular Posts</h1>
+          <FaFire className="text-orange-400 text-xl" />
+          <h1 className="text-xl font-bold text-white">Popular Posts</h1>
         </div>
 
         {/* Content */}
@@ -58,7 +58,7 @@ export const PopularPosts = () => {
         ) : (
           <div className="space-y-2">
             {allPosts.length === 0 ? (
-              <p className="text-center text-gray-500 py-4">
+              <p className="text-center text-gray-400 py-4">
                 No posts available yet
               </p>
             ) : (
@@ -68,30 +68,30 @@ export const PopularPosts = () => {
                   key={post._id}
                   className="block group"
                 >
-                  <div className="p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                  <div className="p-3 rounded-lg hover:bg-gray-700 transition-colors">
                     {/* Author Info */}
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center">
-                        <FaUser className="text-indigo-600 text-sm" />
+                      <div className="w-6 h-6 rounded-full bg-indigo-900/50 border border-indigo-700 flex items-center justify-center">
+                        <FaUser className="text-indigo-300 text-sm" />
                       </div>
-                      <span className="text-sm font-medium text-gray-900">
+                      <span className="text-sm font-medium text-gray-200">
                         @{post.author}
                       </span>
                       <span className="text-sm text-gray-500">•</span>
-                      <div className="flex items-center gap-1 text-sm text-gray-500">
+                      <div className="flex items-center gap-1 text-sm text-gray-400">
                         <FaClock className="text-xs" />
                         <span>{moment(post.createdAt).fromNow()}</span>
                       </div>
                     </div>
 
                     {/* Post Title */}
-                    <h2 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h2 className="text-lg font-semibold text-white group-hover:text-indigo-400 transition-colors">
                       {post.title}
                     </h2>
 
                     {/* Likes Count */}
-                    <div className="flex items-center gap-1 mt-1 text-sm text-gray-500">
-                      <FaHeart className="text-red-500" />
+                    <div className="flex items-center gap-1 mt-1 text-sm text-gray-400">
+                      <FaHeart className="text-red-400" />
                       <span>
                         {post.likes.length}{" "}
                         {post.likes.length === 1 ? "like" : "likes"}

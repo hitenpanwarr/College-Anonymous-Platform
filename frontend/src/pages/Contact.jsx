@@ -39,19 +39,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="w-full ">
-      <div className="max-w-[500px] mx-auto px-2 flex flex-col gap-5   min-h-screen pt-24  w-full">
-        <h1 className="dark:text-gray-300 text-textColor text-2xl font-medium  text-center">
+    <div className="w-full text-gray-200">
+      <div className="max-w-[500px] mx-auto px-2 flex flex-col gap-5 min-h-screen pt-24 w-full">
+        <h1 className="text-2xl font-medium text-center">
           Contact me{" "}
         </h1>
-        <form onSubmit={submitHandler} className="flex flex-col  gap-4  ">
+        <form onSubmit={submitHandler} className="flex flex-col gap-4">
           <input
             required
             value={formData.name}
             onChange={changeHandler}
             id="name"
             type="text"
-            className="rounded-md  py-2 px-2 dark:text-gray-300 text-textColor  border-indigo-600 border focus:outline-none focus:border-indigo-900   dark:bg-cardBg-dark bg-gray-200"
+            className="rounded-md py-3 px-3 text-gray-200 border border-gray-700 bg-gray-800/60 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             placeholder="Enter name"
           />
           <input
@@ -60,7 +60,7 @@ export default function Contact() {
             onChange={changeHandler}
             id="email"
             type="email"
-            className="rounded-md   py-2 px-2 dark:text-gray-300 text-textColor  border-indigo-600 border focus:outline-none focus:border-indigo-900   dark:bg-cardBg-dark bg-gray-200"
+            className="rounded-md py-3 px-3 text-gray-200 border border-gray-700 bg-gray-800/60 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             placeholder="Enter Mail"
           />
           <textarea
@@ -70,16 +70,16 @@ export default function Contact() {
             rows={6}
             id="message"
             type="text"
-            className="rounded-md   py-2 px-2 dark:text-gray-300 text-textColor  border-indigo-600 border focus:outline-none focus:border-indigo-900   dark:bg-cardBg-dark bg-gray-200"
+            className="rounded-md py-3 px-3 text-gray-200 border border-gray-700 bg-gray-800/60 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             placeholder="Enter your message"
           />
           {successMessage && (
-            <p className="bg-green-600 rounded-md  py-2 text-gray-200 text-center font-medium">
+            <p className="bg-green-600/80 border border-green-700 rounded-md py-2 text-gray-100 text-center font-medium">
               {successMessage}
             </p>
           )}
 
-          <button className="  text-white bg-indigo-700 rounded-md py-2 hover:bg-indigo-800 transition-all ">
+          <button className="text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-md py-3 hover:from-indigo-700 hover:to-purple-700 transition-colors">
             Submit
           </button>
         </form>

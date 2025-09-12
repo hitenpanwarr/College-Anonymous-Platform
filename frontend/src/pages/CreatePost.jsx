@@ -114,16 +114,16 @@ export default function CreatePost() {
   };
 
   return (
-    <div className="w-full min-h-screen pt-20 pb-20 flex justify-center">
+    <div className="w-full min-h-screen pt-20 pb-20 flex justify-center text-gray-200">
       <div className="max-w-[700px] px-2 mt-2 mb-10 w-full flex flex-col gap-10 items-center">
-        <h1 className="text-2xl text-gray-900 font-semibold">Create Post</h1>
+        <h1 className="text-2xl text-white font-semibold">Create Post</h1>
 
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3">
           <input
             onChange={handleInputChange}
             type="text"
             id="title"
-            className="rounded-md w-full py-2 px-2 bg-gray-200 border border-indigo-600 focus:outline-none focus:border-indigo-900 text-gray-900"
+            className="rounded-md w-full py-3 px-3 bg-gray-800/60 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-200"
             placeholder="Title"
           />
 
@@ -132,11 +132,11 @@ export default function CreatePost() {
               onChange={handleFileChange}
               type="file"
               accept="image/*"
-              className="rounded-md py-2 px-2 grow border border-indigo-600 bg-gray-200 focus:outline-none focus:border-indigo-900 text-gray-900"
+              className="rounded-md py-3 px-3 grow border border-gray-700 bg-gray-800/60 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-200 file:mr-4 file:py-2 file:px-3 file:rounded-md file:border-0 file:text-sm file:bg-indigo-600 file:text-white hover:file:bg-indigo-700"
             />
             <button
               onClick={handleImageUpload}
-              className={`bg-indigo-700 rounded-md hover:scale-95 transition-all px-2 py-2 text-sm text-white ${
+              className={`bg-gradient-to-r from-indigo-600 to-purple-600 rounded-md hover:from-indigo-700 hover:to-purple-700 transition-all px-4 py-2 text-sm text-white ${
                 waiting && "pointer-events-none"
               }`}
             >
@@ -148,12 +148,12 @@ export default function CreatePost() {
             </button>
           </div>
 
-          {waiting && <p className="text-green-600 text-sm">{waiting}</p>}
-          {imgUploadingError && <p className="text-red-500 text-sm">{imgUploadingError}</p>}
+          {waiting && <p className="text-green-400 text-sm">{waiting}</p>}
+          {imgUploadingError && <p className="text-red-400 text-sm">{imgUploadingError}</p>}
           {formData?.image && (
             <img
               src={formData.image}
-              className="w-full h-[300px] border-2 border-indigo-700 rounded-md"
+              className="w-full h-[300px] border border-gray-700 rounded-md"
               alt="Uploaded"
             />
           )}
@@ -161,17 +161,17 @@ export default function CreatePost() {
           <textarea
             onChange={handleInputChange}
             id="content"
-            className="rounded-md w-full border border-indigo-600 bg-gray-200 text-gray-900 py-2 px-2 focus:outline-none focus:border-indigo-900"
+            className="rounded-md w-full border border-gray-700 bg-gray-800/60 text-gray-200 py-3 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             rows={10}
             placeholder="Write your post..."
           />
 
-          {error && <p className="text-red-600 text-sm">{error}</p>}
+          {error && <p className="text-red-400 text-sm">{error}</p>}
 
           <button
-            className={`bg-indigo-700 py-2 px-2 hover:bg-indigo-800 transition-all ${
+            className={`bg-gradient-to-r from-indigo-600 to-purple-600 py-3 px-4 hover:from-indigo-700 hover:to-purple-700 transition-all ${
               imgUploading && "pointer-events-none cursor-not-allowed"
-            } text-white font-medium rounded-md`}
+            } text-white font-medium rounded-md shadow-lg`}
           >
             {loading ? (
               <ThreeDots height="25" width="40" color="white" ariaLabel="loading" />

@@ -86,7 +86,7 @@ export default function SinglePost({ post, onDelete }) {
   return (
     <div
       onClick={postClickHandler}
-      className="p-2   dark:bg-cardBg-dark  bg-white dark:text-gray-200 text-textColor cursor-pointer border border-gray-300 dark:border-gray-700      rounded-lg"
+      className="p-4 bg-gray-800/60 backdrop-blur-sm text-gray-200 cursor-pointer border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
     >
       {signinModal && <SigninModal onClose={closeModal}></SigninModal>}
       {modal && <Modal onClose={closeModal} deleteHandler={deleteHandler} />}
@@ -95,18 +95,18 @@ export default function SinglePost({ post, onDelete }) {
         <p className=" text-sm w-full">{moment(post.createdAt).fromNow()}</p>
       </div>
 
-      <h1 className="font-semibold mb-3 tracking-normal dark:text-gray-300 text-textColor  text-lg">
+      <h1 className="font-semibold mb-3 tracking-normal text-white text-lg">
         {post.title}
       </h1>
       {post.image && (
         <img
           src={post?.image}
-          className=" mb-3 rounded-md w-[200px] md:w-[300px] border dark:border-gray-600  "
+          className=" mb-3 rounded-md w-[200px] md:w-[300px] border border-gray-700"
           alt=""
         />
       )}
       <div className="flex mb-3">
-        <p className="text-sm dark:text-gray-300 text-textColor line-clamp-1 ">
+        <p className="text-sm text-gray-300 line-clamp-1 ">
           {post.content}
         </p>
       </div>

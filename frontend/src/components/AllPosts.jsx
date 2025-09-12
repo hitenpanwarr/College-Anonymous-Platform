@@ -53,21 +53,21 @@ export const AllPosts = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col p-4 bg-gray-100">
+    <div className="w-full h-screen flex flex-col p-4 bg-transparent text-gray-200">
       {/* Create Post Button */}
       <button
         onClick={clickHandler}
-        className="w-full bg-white border border-gray-300 rounded-lg p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow mb-4"
+        className="w-full bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-lg p-4 flex items-center gap-3 shadow-md hover:shadow-lg transition-all mb-4 hover:border-gray-500"
       >
-        <MdAddCircleOutline className="text-3xl text-blue-600" />
-        <span className="text-lg font-medium text-gray-800">
+        <MdAddCircleOutline className="text-3xl text-indigo-400" />
+        <span className="text-lg font-medium text-gray-200">
           Create post...
         </span>
       </button>
 
       {/* Latest Posts Section */}
       <div className="w-full overflow-y-auto">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">Latest Posts</h1>
+        <h1 className="text-2xl font-bold text-white mb-4">Latest Posts</h1>
 
         {loading ? (
           <div className="flex justify-center items-center py-8">
@@ -83,7 +83,7 @@ export const AllPosts = () => {
         ) : (
           <div className="space-y-4">
             {allPosts.length === 0 ? (
-              <p className="text-center text-gray-500 py-4">
+              <p className="text-center text-gray-400 py-4">
                 No posts available
               </p>
             ) : (

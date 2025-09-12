@@ -67,63 +67,78 @@ export default function Signin() {
     }
   };
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center justify-center    px-2  ">
-      <div
-        className={`max-w-[500px] rounded-md  flex flex-col gap-10 py-6 px-2 sm:px-6 w-full 0  dark:border-gray-600 dark:bg-gray-700 bg-indigo-300 bg-opacity-30   dark:bg-opacity-30  `}
-      >
-        <h1 className="text-center dark:text-gray-300 text-textColor text-2xl sm:text-3xl font-semibold">
-          Sign in
-        </h1>
-        <form onSubmit={submitHandler} className="flex flex-col   gap-4  ">
-          <input
-            onChange={changeHandler}
-            id="email"
-            type="text"
-            className="rounded-md   bg-transparent py-2 px-2 dark:text-gray-300 text-textColor dark:placeholder:text-gray-300 placeholder:text-gray-600  border-2 border-gray-600 focus:outline-none focus:border-indigo-700"
-            placeholder="Enter GLA mail ID"
-          />
-          <div className="w-full relative ">
+    <div className="w-screen min-h-screen flex flex-col items-center justify-center px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="max-w-md w-full bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-700/50 p-8">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-white mb-2">Welcome Back</h1>
+          <p className="text-gray-400">Sign in to your account</p>
+        </div>
+        
+        <form onSubmit={submitHandler} className="space-y-6">
+          <div>
+            <input
+              onChange={changeHandler}
+              id="email"
+              type="email"
+              className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+              placeholder="Enter GLA mail ID"
+            />
+          </div>
+          
+          <div className="relative">
             <input
               onChange={changeHandler}
               id="password"
-              type={`${showPassword?"text":"password"}`}
-              className="rounded-md w-full   dark:placeholder:text-gray-300 placeholder:text-gray-600  bg-transparent py-2 px-2 dark:text-gray-300 text-textColor  border-2 border-gray-600 focus:outline-none focus:border-indigo-700"
+              type={`${showPassword ? "text" : "password"}`}
+              className="w-full px-4 py-3 pr-12 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
               placeholder="Enter Password"
-            ></input>
-            {showPassword ? (
-              <IoEyeOutline onClick={toggleShowPassword} className="absolute top-3 text-lg right-2 text-gray-500 " />
-            ) : (
-              <FaRegEyeSlash  onClick={toggleShowPassword} className="absolute top-3 text-lg right-2 text-gray-500 " />
-            )}
+            />
+            <button
+              type="button"
+              onClick={toggleShowPassword}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-200"
+            >
+              {showPassword ? (
+                <IoEyeOutline className="text-xl" />
+              ) : (
+                <FaRegEyeSlash className="text-xl" />
+              )}
+            </button>
           </div>
 
-          {error && <span className=" text-red-600 text-sm">*{error}</span>}
-          <button className=" bg-indigo-600 rounded-md  text-gray-200 py-2 hover:scale-95 transition-all hover:bg-indigo-700 flex justify-center    font-medium">
+          {error && (
+            <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-3">
+              <span className="text-red-400 text-sm">*{error}</span>
+            </div>
+          )}
+          
+          <button 
+            type="submit"
+            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
+          >
             {loading ? (
-              <ThreeDots
-                height="30"
-                width="60"
-                wrapperClass
-                color="white"
-                ariaLabel="loading"
-              />
+              <div className="flex justify-center">
+                <ThreeDots
+                  height="24"
+                  width="48"
+                  color="white"
+                  ariaLabel="loading"
+                />
+              </div>
             ) : (
               "Sign in"
             )}
           </button>
-          <div className="flex md:flex-row flex-col gap-2 justify-between">
-            <p className="dark:text-gray-300 text-textColor">
-              Don't have a account?{" "}
-              <NavLink to="/sign-up">
-                {" "}
-                <span className=" font-semibold cursor-pointer">Sign up</span>
-              </NavLink>{" "}
+          
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+            <p className="text-gray-400">
+              Don't have an account?{" "}
+              <NavLink to="/sign-up" className="text-indigo-400 hover:text-indigo-300 font-semibold transition-colors duration-200">
+                Sign up
+              </NavLink>
             </p>
-            <NavLink to="/forgot-password">
-              <span className="dark:text-gray-300 text-textColor text-sm font-semibold">
-                {" "}
-                Can't Sign in?
-              </span>
+            <NavLink to="/forgot-password" className="text-indigo-400 hover:text-indigo-300 text-sm font-semibold transition-colors duration-200">
+              Can't Sign in?
             </NavLink>
           </div>
         </form>

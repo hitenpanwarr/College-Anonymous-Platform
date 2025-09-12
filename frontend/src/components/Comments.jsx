@@ -68,12 +68,12 @@ export default function Comments({ post }) {
   };
 
   return (
-    <div className="w-full flex flex-col mb-20   mt-6">
+    <div className="w-full flex flex-col mb-20 mt-6 text-gray-200">
       {!currentUser && (
-        <p className="text-center font-medium text-indigo-700 border-b border-gray-600  pb-4">
+        <p className="text-center font-medium text-indigo-300 border-b border-gray-800 pb-4">
           {" "}
           <NavLink to="/sign-in">Signin</NavLink>{" "}
-          <span className="text-gray-300"> to comment</span>{" "}
+          <span className="text-gray-400"> to comment</span>{" "}
         </p>
       )}
       <form
@@ -90,15 +90,15 @@ export default function Comments({ post }) {
             rows={1}
             type="text"
             placeholder="Add Comment"
-            className="w-full focus:outline-none placeholder:text-sm bg-transparent border-b border-gray-500 placeholder:dark:text-gray-300 placeholder:text-textColor  dark:focus:border-b-white focus:border-b-gray-600  focus:border-b-2  dark:text-gray-300 text-textColor text-sm"
+            className="w-full focus:outline-none placeholder:text-sm bg-transparent border-b border-gray-700 placeholder:text-gray-400 focus:border-b-indigo-500 focus:border-b-2 text-gray-200 text-sm"
           />
         </div>
         <button
-          className={`   text-white py-1 px-2 rounded-full text-xs ${
+          className={` text-white py-1 px-3 rounded-full text-xs ${
             !comment
-              ? "pointer-events-none dark:text-gray-300 text-textColor bg-gray-400"
-              : " pointer-events-auto bg-indigo-700"
-          } hover:bg-indigo-500 transition-all self-end mt-2 font-medium `}
+              ? "pointer-events-none text-gray-400 bg-gray-700"
+              : " pointer-events-auto bg-indigo-600 hover:bg-indigo-500"
+          } transition-all self-end mt-2 font-medium `}
         >
           Comment
         </button>

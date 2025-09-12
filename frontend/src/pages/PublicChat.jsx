@@ -68,7 +68,7 @@ const PublicChat = () => {
   };
 
   return (
-    <div className="m-2 p-4 mt-20 min-h-screen bg-gray-100 dark:bg-gray-900 rounded-md shadow-md text-gray-900 dark:text-gray-200">
+    <div className="m-2 p-4 mt-20 min-h-screen bg-transparent text-gray-200">
       {!joinedRoom ? (
         <>
           <div className="flex space-x-3 mb-4">
@@ -77,33 +77,33 @@ const PublicChat = () => {
               placeholder="Enter Room Name"
               value={roomName}
               onChange={(e) => setRoomName(e.target.value)}
-              className="p-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md w-full text-gray-900 dark:text-gray-200"
+              className="p-2 bg-gray-800/60 border border-gray-700 rounded-md w-full text-gray-200 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             <button
               onClick={createRoom}
-              className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-md"
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white p-2 rounded-md"
             >
               Create Room
             </button>
           </div>
-          {error && <span className="text-red-500 text-sm">*{error}</span>}
+          {error && <span className="text-red-400 text-sm">*{error}</span>}
 
           <h2 className="text-lg font-semibold mb-2 mt-2">Available Rooms</h2>
           {rooms.length === 0 ? (
-            <p>No rooms available</p>
+            <p className="text-gray-400">No rooms available</p>
           ) : (
             <ul className="space-y-2">
               {rooms.map((room, index) => (
                 <li
                   key={index}
-                  className="p-2 bg-white dark:bg-gray-800 rounded-md shadow-md flex justify-between"
+                  className="p-2 bg-gray-800/60 border border-gray-700 rounded-md shadow-md flex justify-between"
                 >
-                  <span className="text-gray-900 dark:text-gray-200">
+                  <span className="text-gray-200">
                     {room.name}
                   </span>
                   <button
                     onClick={() => joinRoom(room.name)}
-                    className="bg-green-500 hover:bg-green-600 text-white p-1 rounded-md"
+                    className="bg-green-600 hover:bg-green-700 text-white p-1 rounded-md"
                   >
                     Join
                   </button>
@@ -118,16 +118,16 @@ const PublicChat = () => {
             <h2 className="text-lg font-semibold">Chat in {joinedRoom}</h2>
             <button
               onClick={exitRoom}
-              className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-md"
+              className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-md"
             >
               Exit Room
             </button>
           </div>
-          <div className=" h-96 overflow-y-auto bg-gray-50 dark:bg-gray-800 p-3 border border-gray-300 dark:border-gray-700 rounded-md">
+          <div className="h-96 overflow-y-auto bg-gray-800/60 p-3 border border-gray-700 rounded-md">
             {messages.map((msg, index) => (
               <p
                 key={index}
-                className="p-2 my-1 bg-gray-200 dark:bg-gray-700 rounded-md text-gray-900 dark:text-gray-200"
+                className="p-2 my-1 bg-gray-700 rounded-md text-gray-200"
               >
                 <strong>{msg.senderId}: </strong> {msg.message}
               </p>
@@ -139,11 +139,11 @@ const PublicChat = () => {
               placeholder="Type a message..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="p-2 flex-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 rounded-md"
+              className="p-2 flex-1 border border-gray-700 bg-gray-800/60 text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             <button
               onClick={sendMessage}
-              className="bg-green-500 hover:bg-green-600 text-white p-2 ml-2 rounded-md"
+              className="bg-green-600 hover:bg-green-700 text-white p-2 ml-2 rounded-md"
             >
               Send
             </button>
