@@ -1,3 +1,5 @@
+# College-Anonymous-Platform
+
 College Anonymous Platform
 An anonymous social platform for college students to share thoughts, images, and engage in discussions while ensuring safety through content moderation.
 
